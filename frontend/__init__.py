@@ -10,6 +10,5 @@ def url_with_param(lbl, val):
 
 
 app.jinja_env.globals.update(url_with_param=url_with_param)
-# app.jinja_env.globals.update(req=url_with_param)
 
 from frontend.routes import route_calendar  # noqa: E402, F401
