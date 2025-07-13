@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendar</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body style="font-family: 'Montserrat'; background-color: #f4f4f4;">
+    <div class="input-group input-group-sm mx-3 mt-3 bg-white" style="overflow: hidden;width: fit-content;">
+        <span class="input-group-text">Year</span>
+        <a href="{{ url_with_param('year', request.args.get('year') | int - 1) }}" class="btn px-3 btn-outline-secondary">&lt;</a>
+        <span class="input-group-text">{{ request.args.get('year') }}</span>
+        <a href="{{ url_with_param('year', request.args.get('year') | int + 1) }}" class="btn px-3 btn-outline-secondary">&gt;</a>
+        <span class="ms-5 input-group-text">Type</span>
+        <a href="{{ url_with_param('type', 1) }}" class="btn px-4 btn-outline-primary {% if request.args.get('type') == '1' %}active{% endif %}">1</a>
+        <a href="{{ url_with_param('type', 2) }}" class="btn px-4 btn-outline-primary {% if request.args.get('type') == '2' %}active{% endif %}">2</a>
+        <a href="{{ url_with_param('type', 3) }}" class="btn px-4 btn-outline-primary {% if request.args.get('type') == '3' %}active{% endif %}">3</a>
+    </div>
+    
+    <div class="shadow-sm m-3 rounded rounded-3" style="overflow: hidden;width: fit-content;">
+        {{ content | safe }}
+    </div>
+</body>
+
+</html>
