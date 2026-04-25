@@ -2,8 +2,8 @@ import datetime as dt
 
 
 class Date(dt.date):
-    def __new__(cls, year: int, month: int, dayy: int):
-        return super().__new__(cls, year, month, dayy)
+    def __new__(cls, year: int, month: int, day: int) -> dt.date:
+        return super().__new__(cls, year, month, day)
 
     def __add__(self, days: int) -> "Date":
         new_date = super().__add__(dt.timedelta(days=days))
@@ -25,7 +25,7 @@ class Date(dt.date):
             else:
                 return 28
         else:
-            raise ValueError("Invalid month")
+            raise ValueError(f"Invalid month ({month})")
 
     @staticmethod
     def get_weekday_name(weekday: int) -> str:

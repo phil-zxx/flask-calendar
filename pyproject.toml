@@ -7,3 +7,19 @@ requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.1",
 ]
+
+[tool.ruff]
+select = ["ALL"]
+ignore = ["D100", "D101", "D102", "D103", "D105", "D107",
+          "COM812", "DTZ011", "N802", "PLR6201",
+          "RET505", "CPY001", "INP001",
+          "TRY003", "EM102"]
+extend-select = ["W", "E"]
+preview = true
+line-length = 320
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "double"
+
+[tool.ruff.format]
+quote-style = "double"
