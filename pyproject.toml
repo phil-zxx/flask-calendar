@@ -1,7 +1,7 @@
 [project]
 name = "calendar-view"
 version = "0.1.0"
-description = "Add your description here"
+description = "A simple flask page that shows one calendar year"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
